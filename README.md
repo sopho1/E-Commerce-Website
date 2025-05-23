@@ -26,7 +26,7 @@ A modern React-based web application for aerospace prototyping and visualization
 
 1. Clone the repository:
 ```bash
-git clone [repository-url]
+git clone https://github.com/sopho1/E-Commerce-Website.git
 ```
 
 2. Install dependencies:
@@ -83,14 +83,6 @@ REACT_APP_STRIPE_PUBLIC_KEY=your_stripe_public_key
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 👥 Authors
-
-- Your Name - Initial work
 
 ## 🙏 Acknowledgments
 
