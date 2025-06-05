@@ -5,6 +5,7 @@ import { FaPlane, FaShoppingCart, FaSearch, FaBars, FaTimes, FaSun, FaMoon } fro
 import { theme } from '../theme';
 import { useCart } from '../context/CartContext';
 import { useTheme } from '../context/ThemeContext';
+import { useProducts } from '../context/ProductContext';
 import Cart from './Cart';
 import Search from './Search';
 
@@ -215,6 +216,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { cart, setIsCartOpen } = useCart();
   const { isDarkMode, toggleTheme } = useTheme();
+  const { products } = useProducts();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -246,7 +248,7 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
           >
             <FaPlane />
-            AeroProto
+            Air-Sopho
           </Logo>
 
           <NavLinks>
@@ -338,7 +340,7 @@ const Navbar = () => {
             <MobileMenuHeader>
               <Logo scrolled={false}>
                 <FaPlane />
-                AeroProto
+                Air-Sopho
               </Logo>
               <IconButton
                 scrolled={false}
@@ -387,36 +389,7 @@ const Navbar = () => {
       <Search
         isOpen={isSearchOpen}
         onClose={() => setIsSearchOpen(false)}
-        products={[
-          {
-            id: 1,
-            name: "SkyGlider X1",
-            description: "Ultra-lightweight prototype with advanced aerodynamics",
-            price: "$2,499",
-            image: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80"
-          },
-          {
-            id: 2,
-            name: "AeroJet Pro",
-            description: "High-performance jet prototype with cutting-edge technology",
-            price: "$3,999",
-            image: "https://images.unsplash.com/photo-1540962351504-03099e0a754b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-          },
-          {
-            id: 3,
-            name: "HeliMaster H2",
-            description: "Revolutionary helicopter prototype with enhanced stability",
-            price: "$4,499",
-            image: "https://images.unsplash.com/photo-1581093458791-9d15482442f6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-          },
-          {
-            id: 4,
-            name: "DroneX Elite",
-            description: "Advanced drone prototype with AI capabilities",
-            price: "$1,999",
-            image: "https://images.unsplash.com/photo-1579829366248-204fe8413f31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-          }
-        ]}
+        products={products}
       />
     </>
   );

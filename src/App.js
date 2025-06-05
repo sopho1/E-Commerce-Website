@@ -15,6 +15,7 @@ import { createGlobalStyle } from 'styled-components';
 import { CartProvider } from './context/CartContext';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { lightTheme, darkTheme } from './theme';
+import { ProductProvider } from './context/ProductContext';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
@@ -48,19 +49,21 @@ const AppContent = () => {
   
   return (
     <CartProvider>
-      <GlobalStyle isDarkMode={isDarkMode} />
-      <Navbar />
-      <Hero />
-      <Products />
-      <About />
-      <News />
-      <Announcements />
-      <Gallery />
-      <Finance />
-      <FAQ />
-      <Contact />
-      <Footer />
-      <BackToTop />
+      <ProductProvider>
+        <GlobalStyle isDarkMode={isDarkMode} />
+        <Navbar />
+        <Hero />
+        <Products />
+        <About />
+        <News />
+        <Announcements />
+        <Gallery />
+        <Finance />
+        <FAQ />
+        <Contact />
+        <Footer />
+        <BackToTop />
+      </ProductProvider>
     </CartProvider>
   );
 };
