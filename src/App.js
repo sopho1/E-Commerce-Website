@@ -16,7 +16,6 @@ import { CartProvider } from './context/CartContext';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import { lightTheme, darkTheme } from './theme';
 import { ProductProvider } from './context/ProductContext';
-import { Analytics } from '@vercel/analytics/react';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
@@ -49,8 +48,6 @@ const AppContent = () => {
   const { isDarkMode } = useTheme();
   
   return (
-    <>
-    <Analytics/>
     <CartProvider>
       <ProductProvider>
         <GlobalStyle isDarkMode={isDarkMode} />
@@ -68,7 +65,6 @@ const AppContent = () => {
         <BackToTop />
       </ProductProvider>
     </CartProvider>
-    </>
   );
 };
 
